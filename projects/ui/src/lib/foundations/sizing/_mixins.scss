@@ -1,0 +1,26 @@
+// projects/ui/src/lib/foundations/sizing/_mixins.scss
+
+// Dimensionar ancho y alto simétricamente con escala base
+@mixin size($value) {
+  width: var(--ks-size-#{$value});
+  height: var(--ks-size-#{$value});
+}
+
+@mixin width($value) {
+  width: var(--ks-size-#{$value});
+}
+
+@mixin height($value) {
+  height: var(--ks-size-#{$value});
+}
+
+// Atajos para componentes contextuales
+@mixin avatar-size($size) {
+  width: var(--ks-size-avatar-#{$size});
+  height: var(--ks-size-avatar-#{$size});
+}
+
+@mixin icon-size($size) {
+  width: var(--ks-size-icon-#{$size});
+  height: var(--ks-size-icon-#{$size});
+}
