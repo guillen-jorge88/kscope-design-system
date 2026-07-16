@@ -1,0 +1,121 @@
+// projects/ui/src/lib/foundations/typography/_styles.scss
+
+@mixin ks-display-large {
+  font-family: var(--ks-font-family-primary);
+  font-size: var(--ks-font-size-display-lg);
+  font-weight: var(--ks-font-weight-bold);
+  line-height: var(--ks-line-height-sm);
+  letter-spacing: var(--ks-letter-spacing-tighter);
+}
+
+@mixin ks-display-medium {
+  font-family: var(--ks-font-family-primary);
+  font-size: var(--ks-font-size-display-md);
+  font-weight: var(--ks-font-weight-bold);
+  line-height: var(--ks-line-height-sm);
+  letter-spacing: var(--ks-letter-spacing-tighter);
+}
+
+@mixin ks-display-small {
+  font-family: var(--ks-font-family-primary);
+  font-size: var(--ks-font-size-display-sm);
+  font-weight: var(--ks-font-weight-bold);
+  line-height: var(--ks-line-height-sm);
+  letter-spacing: var(--ks-letter-spacing-tight);
+}
+
+@mixin ks-headline-large {
+  font-family: var(--ks-font-family-primary);
+  font-size: var(--ks-font-size-xxxl);
+  font-weight: var(--ks-font-weight-semibold);
+  line-height: var(--ks-line-height-md);
+  letter-spacing: var(--ks-letter-spacing-tight);
+}
+
+@mixin ks-headline-medium {
+  font-family: var(--ks-font-family-primary);
+  font-size: var(--ks-font-size-xxl);
+  font-weight: var(--ks-font-weight-semibold);
+  line-height: var(--ks-line-height-md);
+  letter-spacing: var(--ks-letter-spacing-tight);
+}
+
+@mixin ks-headline-small {
+  font-family: var(--ks-font-family-primary);
+  font-size: var(--ks-font-size-xl);
+  font-weight: var(--ks-font-weight-semibold);
+  line-height: var(--ks-line-height-md);
+  letter-spacing: var(--ks-letter-spacing-normal);
+}
+
+@mixin ks-title-large {
+  font-family: var(--ks-font-family-primary);
+  font-size: var(--ks-font-size-lg);
+  font-weight: var(--ks-font-weight-medium);
+  line-height: var(--ks-line-height-lg);
+  letter-spacing: var(--ks-letter-spacing-normal);
+}
+
+@mixin ks-title-medium {
+  font-family: var(--ks-font-family-primary);
+  font-size: var(--ks-font-size-md);
+  font-weight: var(--ks-font-weight-medium);
+  line-height: var(--ks-line-height-lg);
+  letter-spacing: var(--ks-letter-spacing-wide);
+}
+
+@mixin ks-title-small {
+  font-family: var(--ks-font-family-primary);
+  font-size: var(--ks-font-size-sm);
+  font-weight: var(--ks-font-weight-medium);
+  line-height: var(--ks-line-height-lg);
+  letter-spacing: var(--ks-letter-spacing-wide);
+}
+
+@mixin ks-body-large {
+  font-family: var(--ks-font-family-secondary);
+  font-size: var(--ks-font-size-md);
+  font-weight: var(--ks-font-weight-regular);
+  line-height: var(--ks-line-height-xl);
+  letter-spacing: var(--ks-letter-spacing-normal);
+}
+
+@mixin ks-body-medium {
+  font-family: var(--ks-font-family-secondary);
+  font-size: var(--ks-font-size-sm);
+  font-weight: var(--ks-font-weight-regular);
+  line-height: var(--ks-line-height-xl);
+  letter-spacing: var(--ks-letter-spacing-normal);
+}
+
+@mixin ks-body-small {
+  font-family: var(--ks-font-family-secondary);
+  font-size: var(--ks-font-size-xs);
+  font-weight: var(--ks-font-weight-regular);
+  line-height: var(--ks-line-height-xl);
+  letter-spacing: var(--ks-letter-spacing-wide);
+}
+
+@mixin ks-label-large {
+  font-family: var(--ks-font-family-primary);
+  font-size: var(--ks-font-size-sm);
+  font-weight: var(--ks-font-weight-semibold);
+  line-height: var(--ks-line-height-xs);
+  letter-spacing: var(--ks-letter-spacing-wider);
+}
+
+@mixin ks-label-medium {
+  font-family: var(--ks-font-family-primary);
+  font-size: var(--ks-font-size-xs);
+  font-weight: var(--ks-font-weight-semibold);
+  line-height: var(--ks-line-height-xs);
+  letter-spacing: var(--ks-letter-spacing-wider);
+}
+
+@mixin ks-label-small {
+  font-family: var(--ks-font-family-primary);
+  font-size: 0.625rem;
+  font-weight: var(--ks-font-weight-semibold);
+  line-height: var(--ks-line-height-xs);
+  letter-spacing: var(--ks-letter-spacing-wider);
+}
