@@ -1,0 +1,30 @@
+// projects/ui/src/lib/foundations/radius/_mixins.scss
+
+// Redondeado completo en las 4 esquinas
+@mixin radius($value) {
+  border-radius: var(--ks-radius-#{$value});
+}
+
+// Redondeado solo en las esquinas superiores (ej. pestañas o headers)
+@mixin radius-top($value) {
+  border-top-left-radius: var(--ks-radius-#{$value});
+  border-top-right-radius: var(--ks-radius-#{$value});
+}
+
+// Redondeado solo en las esquinas inferiores
+@mixin radius-bottom($value) {
+  border-bottom-left-radius: var(--ks-radius-#{$value});
+  border-bottom-right-radius: var(--ks-radius-#{$value});
+}
+
+// Redondeado en las esquinas izquierdas
+@mixin radius-left($value) {
+  border-top-left-radius: var(--ks-radius-#{$value});
+  border-bottom-left-radius: var(--ks-radius-#{$value});
+}
+
+// Redondeado en las esquinas derechas
+@mixin radius-right($value) {
+  border-top-right-radius: var(--ks-radius-#{$value});
+  border-bottom-right-radius: var(--ks-radius-#{$value});
+}

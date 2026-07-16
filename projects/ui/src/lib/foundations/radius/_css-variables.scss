@@ -1,0 +1,21 @@
+// projects/ui/src/lib/foundations/radius/_css-variables.scss
+
+:root {
+  // Escala Base
+  --ks-radius-none: 0;
+  --ks-radius-xs: 0.125rem;
+  --ks-radius-sm: 0.25rem;
+  --ks-radius-md: 0.5rem;
+  --ks-radius-lg: 0.75rem;
+  --ks-radius-xl: 1rem;
+  --ks-radius-2xl: 1.5rem;
+  --ks-radius-full: 9999px;
+
+  // Mapeo de Tokens Semánticos de Componentes
+  --ks-radius-button: var(--ks-radius-md);
+  --ks-radius-input: var(--ks-radius-md);
+  --ks-radius-card: var(--ks-radius-lg);
+  --ks-radius-modal: var(--ks-radius-xl);
+  --ks-radius-avatar: var(--ks-radius-full);
+  --ks-radius-badge: var(--ks-radius-full);
+}
