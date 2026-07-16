@@ -1,0 +1,70 @@
+// projects/ui/src/lib/foundations/breakpoints/_mixins.scss
+
+@use 'sass:map';
+@import 'breakpoints';
+
+// 1. Mobile First: Aplica desde el breakpoint hacia arriba (min-width)
+@mixin up($breakpoint) {
+  $value: map.get($ks-breakpoints, $breakpoint);
+  @if $value != 0 {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// 2. Desktop First: Aplica desde el breakpoint hacia abajo (max-width)
+// Resta 0.02px para evitar colisiones con el inicio del siguiente breakpoint
+@mixin down($breakpoint) {
+  $value: map.get($ks-breakpoints, $breakpoint);
+  @if $value and $value != 0 {
+    @media (max-width: ($value - 0.02px)) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// 3. Rangos específicos: Entre dos límites definidos
+@mixin between($min, $max) {
+  $min-value: map.get($ks-breakpoints, $min);
+  $max-value: map.get($ks-breakpoints, $max);
+
+  @if $min-value and $max-value {
+    @media (min-width: $min-value) and (max-width: ($max-value - 0.02px)) {
+      @content;
+    }
+  }
+}
+
+// 4. Exclusivo: Aplica únicamente dentro del rango de ese breakpoint específico
+@mixin only($breakpoint) {
+  @if $breakpoint == xs {
+    @include down(sm) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @include between(sm, md) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @include between(md, lg) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @include between(lg, xl) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @include between(xl, xxl) {
+      @content;
+    }
+  } @else if $breakpoint == xxl {
+    @include up(xxl) {
+      @content;
+    }
+  }
+}
