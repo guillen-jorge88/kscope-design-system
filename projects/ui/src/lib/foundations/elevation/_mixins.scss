@@ -1,0 +1,11 @@
+// projects/ui/src/lib/foundations/elevation/_mixins.scss
+
+// Permite aplicar elevación pasando el nivel numérico (ej: 2) o la variable semántica cruda
+@mixin elevation($level) {
+  box-shadow: var(--ks-shadow-#{$level});
+}
+
+// Aplica directamente el token semántico del componente mapeado
+@mixin elevation-component($component) {
+  box-shadow: var(--ks-elevation-#{$component});
+}
