@@ -1,0 +1,5 @@
+// projects/ui/src/lib/foundations/motion/_transition.scss
+
+$ks-transition-fast: all 150ms cubic-bezier(0, 0, 0.2, 1);
+$ks-transition-normal: all 200ms cubic-bezier(0, 0, 0.2, 1);
+$ks-transition-slow: all 300ms cubic-bezier(0, 0, 0.2, 1);

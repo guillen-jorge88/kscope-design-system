@@ -6,3 +6,4 @@ export * from './spacing';
 export * from './sizing';
 export * from './radius';
 export * from './elevation';
+export * from './motion';

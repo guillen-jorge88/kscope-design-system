@@ -1,0 +1,21 @@
+// projects/ui/src/lib/foundations/motion/_mixins.scss
+
+// Permite inyectar transiciones estándar usando alias semánticos (fast, normal, slow)
+@mixin transition($duration: normal) {
+  transition: all var(--ks-duration-#{$duration}) var(--ks-easing-standard);
+}
+
+// Transición semántica especializada para interacciones de Hover
+@mixin transition-hover {
+  transition: var(--ks-transition-hover);
+}
+
+// Atajo para desvanecidos de opacidad
+@mixin fade($duration: normal) {
+  transition: opacity var(--ks-duration-#{$duration}) var(--ks-easing-standard);
+}
+
+// Atajo para cambios de transformación (escalas, desplazamientos)
+@mixin transform($duration: fast) {
+  transition: transform var(--ks-duration-#{$duration}) var(--ks-easing-standard);
+}

@@ -1,0 +1,32 @@
+// projects/ui/src/lib/foundations/motion/_css-variables.scss
+
+:root {
+  // Duraciones de Escala Base
+  --ks-duration-instant: 0ms;
+  --ks-duration-fastest: 75ms;
+  --ks-duration-faster: 100ms;
+  --ks-duration-fast: 150ms;
+  --ks-duration-normal: 200ms;
+  --ks-duration-slow: 300ms;
+  --ks-duration-slower: 500ms;
+  --ks-duration-slowest: 700ms;
+
+  // Curvas de Aceleración Base
+  --ks-easing-linear: linear;
+  --ks-easing-ease: ease;
+  --ks-easing-in: cubic-bezier(0.4, 0, 1, 1);
+  --ks-easing-out: cubic-bezier(0, 0, 0.2, 1);
+  --ks-easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ks-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+
+  // Curva Predeterminada del Sistema
+  --ks-easing-standard: var(--ks-easing-out);
+
+  // Mapeos de Transiciones Semánticas
+  --ks-transition-hover: all var(--ks-duration-fast) var(--ks-easing-standard);
+  --ks-transition-focus: all var(--ks-duration-fast) var(--ks-easing-standard);
+  --ks-transition-expand: all var(--ks-duration-normal) var(--ks-easing-standard);
+  --ks-transition-collapse: all var(--ks-duration-normal) var(--ks-easing-standard);
+  --ks-transition-dialog-open: all var(--ks-duration-slow) var(--ks-easing-standard);
+  --ks-transition-dialog-close: all var(--ks-duration-fast) var(--ks-easing-standard);
+}
