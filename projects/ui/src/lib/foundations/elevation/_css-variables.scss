@@ -1,0 +1,20 @@
+// projects/ui/src/lib/foundations/elevation/_css-variables.scss
+
+:root {
+  // Niveles Físicos de Sombras
+  --ks-shadow-0: none;
+  --ks-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --ks-shadow-2: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --ks-shadow-3: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --ks-shadow-4: 0 8px 16px rgba(0, 0, 0, 0.12);
+  --ks-shadow-5: 0 12px 24px rgba(0, 0, 0, 0.15);
+  --ks-shadow-6: 0 16px 32px rgba(0, 0, 0, 0.18);
+
+  // Mapeos Semánticos de Elevación (Mapeados a los niveles de arriba)
+  --ks-elevation-button: var(--ks-shadow-1);
+  --ks-elevation-card: var(--ks-shadow-2);
+  --ks-elevation-dropdown: var(--ks-shadow-3);
+  --ks-elevation-popover: var(--ks-shadow-4);
+  --ks-elevation-dialog: var(--ks-shadow-5);
+  --ks-elevation-drawer: var(--ks-shadow-6);
+}

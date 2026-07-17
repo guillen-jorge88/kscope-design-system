@@ -1,0 +1,26 @@
+// projects/ui/src/lib/foundations/colors/_css-variables.scss
+@import './brand';
+@import './palette';
+@import './semantic';
+
+:root {
+  // Brand
+  --ks-primary: #{$ks-brand-primary};
+  --ks-secondary: #{$ks-brand-secondary};
+
+  // Light Theme (Default Semantics)
+  --ks-text-primary: #{$ks-neutral-900};
+  --ks-text-secondary: #{$ks-neutral-700};
+  --ks-background-primary: #{$ks-neutral-50};
+  --ks-surface-default: #ffffff;
+  --ks-border-default: #{$ks-neutral-200};
+}
+
+[data-theme='dark'] {
+  // Dark Theme (Overriding Semantics)
+  --ks-text-primary: #{$ks-neutral-50};
+  --ks-text-secondary: #{$ks-neutral-300};
+  --ks-background-primary: #{$ks-neutral-900};
+  --ks-surface-default: #{$ks-neutral-800};
+  --ks-border-default: #{$ks-neutral-700};
+}

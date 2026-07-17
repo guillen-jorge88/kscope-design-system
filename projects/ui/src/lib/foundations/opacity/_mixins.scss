@@ -1,0 +1,11 @@
+// projects/ui/src/lib/foundations/opacity/_mixins.scss
+
+// Permite inyectar opacidad a partir de la escala física (ej. disabled, subtle)
+@mixin opacity($value) {
+  opacity: var(--ks-opacity-#{$value});
+}
+
+// Inyecta opacidad utilizando la intención semántica del componente (ej. secondary-icon, placeholder)
+@mixin opacity-component($intent) {
+  opacity: var(--ks-opacity-#{$intent});
+}

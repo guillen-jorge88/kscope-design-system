@@ -1,0 +1,37 @@
+// projects/ui/src/lib/foundations/sizing/_css-variables.scss
+
+:root {
+  // Escala Estructural Base
+  --ks-size-xs: 1rem;
+  --ks-size-sm: 1.5rem;
+  --ks-size-md: 2rem;
+  --ks-size-lg: 2.5rem;
+  --ks-size-xl: 3rem;
+  --ks-size-2xl: 4rem;
+  --ks-size-3xl: 5rem;
+  --ks-size-4xl: 6rem;
+
+  // Botones
+  --ks-size-button-sm: 2rem;
+  --ks-size-button-md: 2.5rem;
+  --ks-size-button-lg: 3rem;
+
+  // Inputs
+  --ks-size-input-sm: 2rem;
+  --ks-size-input-md: 2.5rem;
+  --ks-size-input-lg: 3rem;
+
+  // Iconos
+  --ks-size-icon-xs: 0.75rem;
+  --ks-size-icon-sm: 1rem;
+  --ks-size-icon-md: 1.25rem;
+  --ks-size-icon-lg: 1.5rem;
+  --ks-size-icon-xl: 2rem;
+
+  // Avatares
+  --ks-size-avatar-xs: 1.5rem;
+  --ks-size-avatar-sm: 2rem;
+  --ks-size-avatar-md: 2.5rem;
+  --ks-size-avatar-lg: 3rem;
+  --ks-size-avatar-xl: 4rem;
+}

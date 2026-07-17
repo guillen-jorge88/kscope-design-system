@@ -1,0 +1,47 @@
+// projects/ui/src/lib/foundations/typography/_css-variables.scss
+@import './families';
+@import './weights';
+@import './sizes';
+@import './line-heights';
+@import './letter-spacing';
+
+:root {
+  // Families
+  --ks-font-family-primary: #{$ks-font-family-primary};
+  --ks-font-family-secondary: #{$ks-font-family-secondary};
+  --ks-font-family-monospace: #{$ks-font-family-monospace};
+
+  // Weights
+  --ks-font-weight-light: #{$ks-font-weight-light};
+  --ks-font-weight-regular: #{$ks-font-weight-regular};
+  --ks-font-weight-medium: #{$ks-font-weight-medium};
+  --ks-font-weight-semibold: #{$ks-font-weight-semibold};
+  --ks-font-weight-bold: #{$ks-font-weight-bold};
+
+  // Sizes
+  --ks-font-size-xs: #{$ks-font-size-xs};
+  --ks-font-size-sm: #{$ks-font-size-sm};
+  --ks-font-size-md: #{$ks-font-size-md};
+  --ks-font-size-lg: #{$ks-font-size-lg};
+  --ks-font-size-xl: #{$ks-font-size-xl};
+  --ks-font-size-xxl: #{$ks-font-size-xxl};
+  --ks-font-size-xxxl: #{$ks-font-size-xxxl};
+  --ks-font-size-display-sm: #{$ks-font-size-display-sm};
+  --ks-font-size-display-md: #{$ks-font-size-display-md};
+  --ks-font-size-display-lg: #{$ks-font-size-display-lg};
+
+  // Line Heights
+  --ks-line-height-xs: #{$ks-line-height-xs};
+  --ks-line-height-sm: #{$ks-line-height-sm};
+  --ks-line-height-md: #{$ks-line-height-md};
+  --ks-line-height-lg: #{$ks-line-height-lg};
+  --ks-line-height-xl: #{$ks-line-height-xl};
+  --ks-line-height-xxl: #{$ks-line-height-xxl};
+
+  // Letter Spacing
+  --ks-letter-spacing-tighter: #{$ks-letter-spacing-tighter};
+  --ks-letter-spacing-tight: #{$ks-letter-spacing-tight};
+  --ks-letter-spacing-normal: #{$ks-letter-spacing-normal};
+  --ks-letter-spacing-wide: #{$ks-letter-spacing-wide};
+  --ks-letter-spacing-wider: #{$ks-letter-spacing-wider};
+}

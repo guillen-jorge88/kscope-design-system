@@ -1,0 +1,13 @@
+// projects/ui/src/lib/foundations/spacing/_mixins.scss
+
+@mixin padding($space) {
+  padding: var(--ks-space-#{$space});
+}
+
+@mixin margin($space) {
+  margin: var(--ks-space-#{$space});
+}
+
+@mixin gap($space) {
+  gap: var(--ks-space-#{$space});
+}

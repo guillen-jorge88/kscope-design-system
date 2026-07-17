@@ -1,0 +1,18 @@
+// projects/ui/src/lib/foundations/opacity/_css-variables.scss
+
+:root {
+  // Escala Física Base
+  --ks-opacity-transparent: 0;
+  --ks-opacity-disabled: 0.38;
+  --ks-opacity-subtle: 0.64;
+  --ks-opacity-medium: 0.72;
+  --ks-opacity-visible: 0.88;
+  --ks-opacity-solid: 1;
+
+  // Mapeos Semánticos por Intención de Componente
+  --ks-opacity-enabled: var(--ks-opacity-solid);
+  --ks-opacity-component-disabled: var(--ks-opacity-disabled);
+  --ks-opacity-overlay: var(--ks-opacity-visible);
+  --ks-opacity-secondary-icon: var(--ks-opacity-medium);
+  --ks-opacity-placeholder: var(--ks-opacity-subtle);
+}
