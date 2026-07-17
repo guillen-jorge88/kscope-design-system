@@ -1,0 +1,15 @@
+// projects/ui/src/lib/foundations/z-index/_css-variables.scss
+
+:root {
+  --ks-z-base: 0;
+  --ks-z-raised: 10;
+  --ks-z-dropdown: 100;
+  --ks-z-sticky: 200;
+  --ks-z-fixed: 300;
+  --ks-z-overlay: 400;
+  --ks-z-drawer: 500;
+  --ks-z-modal: 600;
+  --ks-z-popover: 700;
+  --ks-z-tooltip: 800;
+  --ks-z-toast: 900;
+}

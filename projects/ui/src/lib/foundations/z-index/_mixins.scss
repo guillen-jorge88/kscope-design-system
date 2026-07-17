@@ -1,0 +1,6 @@
+// projects/ui/src/lib/foundations/z-index/_mixins.scss
+
+// Permite inyectar de manera rápida el nivel de z-index a partir de los tokens de capas
+@mixin z($level) {
+  z-index: var(--ks-z-#{$level});
+}
