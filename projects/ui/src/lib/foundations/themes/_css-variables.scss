@@ -1,0 +1,15 @@
+// projects/ui/src/lib/foundations/themes/_css-variables.scss
+
+:root {
+  // Inicialización por defecto en caso de ausencia de atributos en HTML
+  --ks-background: #ffffff;
+  --ks-surface: #f8f9fa;
+  --ks-text: #111827;
+  --ks-border: #e5e7eb;
+
+  --ks-primary: #0057ff;
+  --ks-secondary: #6b7280;
+  --ks-success: #10b981;
+  --ks-warning: #f59e0b;
+  --ks-error: #ef4444;
+}

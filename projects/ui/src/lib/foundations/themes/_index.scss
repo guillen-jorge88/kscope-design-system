@@ -1,0 +1,13 @@
+// projects/ui/src/lib/foundations/themes/_index.scss
+
+@import 'css-variables';
+
+// Carga de Capas de Contraste (Temas)
+@import 'light/theme';
+@import 'dark/theme';
+@import 'high-contrast/theme';
+
+// Carga de Identidades Corporativas (Marcas)
+@import 'brands/default/brand';
+@import 'brands/corporate/brand';
+@import 'brands/banco/brand';

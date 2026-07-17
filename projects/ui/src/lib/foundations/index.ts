@@ -10,3 +10,4 @@ export * from './motion';
 export * from './breakpoints';
 export * from './opacity';
 export * from './z-index';
+export * from './themes';
