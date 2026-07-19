@@ -1,0 +1,8 @@
+export const FORM_LIMITS = {
+  PASSWORD_MIN: 8,
+  PASSWORD_MAX: 128,
+  NAME_MAX: 100,
+  EMAIL_MAX: 320,
+  PHONE_MAX: 20,
+  SEARCH_MIN: 2,
+} as const;
