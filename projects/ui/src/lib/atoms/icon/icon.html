@@ -1,0 +1,10 @@
+<span
+  [className]="computedClasses()"
+  [style.transform]="computedStyles().transform"
+  [style.width]="computedStyles().width"
+  [style.height]="computedStyles().height"
+  [attr.aria-label]="ariaLabel() || null"
+  [attr.aria-hidden]="ariaLabel() ? 'false' : 'true'"
+  [innerHTML]="rawSvg()"
+>
+</span>
