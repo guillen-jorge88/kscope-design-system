@@ -1,0 +1,1 @@
+export type VariantT = 'filled' | 'outlined' | 'text' | 'ghost' | 'link';
