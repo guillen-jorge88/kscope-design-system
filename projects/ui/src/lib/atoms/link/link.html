@@ -1,0 +1,29 @@
+<!-- projects/ui/src/lib/atoms/link/link.component.html -->
+<a
+  [attr.href]="disabled() ? null : href() || null"
+  [attr.target]="target()"
+  [attr.rel]="computedRel()"
+  [attr.aria-disabled]="disabled()"
+  [attr.aria-label]="ariaLabel() || null"
+  class="ks-link"
+  [class.ks-link--disabled]="disabled()"
+  [class.ks-link--underline-always]="underline() === 'always'"
+  [class.ks-link--underline-hover]="underline() === 'hover'"
+  [class.ks-link--underline-never]="underline() === 'never'"
+>
+  @if (leftIcon()) {
+    <ks-icon [name]="leftIcon()" [size]="size()" class="ks-link__icon ks-link__icon--left" />
+  }
+
+  <span class="ks-link__content">
+    <ng-content></ng-content>
+  </span>
+
+  @if (rightIcon() || (external() && !rightIcon())) {
+    <ks-icon
+      [name]="rightIcon() || 'ph-arrow-square-out'"
+      [size]="size()"
+      class="ks-link__icon ks-link__icon--right"
+    />
+  }
+</a>

@@ -1,0 +1,56 @@
+// projects/ui/src/lib/atoms/link/link.component.scss
+
+:host {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ks-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--ks-link-size, 14px);
+  font-weight: var(--ks-link-weight, 500);
+  color: var(--ks-link-color, var(--ks-color-primary, #1e40af));
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    text-decoration 0.2s ease;
+  outline: none;
+
+  &--underline-always {
+    text-decoration: underline;
+  }
+
+  &--underline-hover {
+    &:hover:not(&--disabled) {
+      text-decoration: underline;
+    }
+  }
+
+  &--underline-never {
+    text-decoration: none !important;
+  }
+
+  &:hover:not(&--disabled) {
+    filter: brightness(0.85);
+  }
+
+  &:focus-visible {
+    border-radius: 2px;
+    outline: 2px solid var(--ks-link-color, var(--ks-color-primary, #1e40af));
+    outline-offset: 2px;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .ks-link__content {
+    display: inline-flex;
+    align-items: center;
+  }
+}

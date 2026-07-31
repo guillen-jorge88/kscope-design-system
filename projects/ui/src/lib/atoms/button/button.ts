@@ -11,11 +11,12 @@ import {
 import { ButtonShape, ButtonType, ButtonVariant } from './models/button.types';
 import { ColorT, ComponentSizeT } from '../../types';
 import { BUTTON_TOKENS } from './models/button.tokens';
+import { IconComponent } from '../icon/icon';
 
 @Component({
   selector: BUTTON_SELECTOR,
   standalone: true,
-  imports: [],
+  imports: [IconComponent],
   templateUrl: './button.html',
   styleUrl: './button.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

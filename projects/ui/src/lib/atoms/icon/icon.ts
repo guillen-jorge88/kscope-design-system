@@ -18,7 +18,7 @@ import {
   styleUrl: './icon.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Icon implements IconProps {
+export class IconComponent implements IconProps {
   /** Nombre del icono (requerido) */
   readonly name = input.required<string>();
 
