@@ -1,5 +1,5 @@
 // projects/ui/src/lib/atoms/icon/icon.constants.ts
-import { ComponentSizeT, ColorT } from '../../types';
+import { ComponentSizeT, ColorT } from '../../../types';
 import { IconLibrary } from './icon.types';
 
 export const ICON_SELECTOR = 'ks-icon';

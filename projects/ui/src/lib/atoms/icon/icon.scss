@@ -1,28 +1,42 @@
+// projects/ui/src/lib/atoms/icon/icon.scss
+
 :host {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: var(--ks-icon-size, 32px);
+  height: var(--ks-icon-size, 32px);
+  color: var(--ks-icon-color, currentColor);
   line-height: 1;
   vertical-align: middle;
-}
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 
-.ks-icon-base {
-  display: inline-block;
-  flex-shrink: 0;
-
-  ::ng-deep svg {
+  .ks-icon__wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    display: block;
-    fill: currentColor; // Sincroniza dinámicamente con las clases de color de foundations
+
+    &.ks-icon--spin {
+      animation: ks-icon-spin-anim 1s infinite linear;
+    }
   }
 
-  &--spin {
-    animation: ksIconSpin 2s linear infinite;
+  .ks-icon__element,
+  .material-icons {
+    font-size: var(--ks-icon-size, 32px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
-@keyframes ksIconSpin {
+@keyframes ks-icon-spin-anim {
   from {
     transform: rotate(0deg);
   }

@@ -1,6 +1,6 @@
 // projects/ui/src/lib/atoms/icon/icon.interface.ts
 import { InputSignal, InputSignalWithTransform } from '@angular/core';
-import { ComponentSizeT, ColorT } from '../../types';
+import { ComponentSizeT, ColorT } from '../../../types';
 import { IconLibrary } from './icon.types';
 
 export interface IconProps {

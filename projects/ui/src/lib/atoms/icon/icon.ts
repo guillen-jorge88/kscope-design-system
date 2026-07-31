@@ -1,47 +1,60 @@
-// projects/ui/src/lib/atoms/icon/icon.ts
-import { Component, ChangeDetectionStrategy, input, inject, computed } from '@angular/core';
-import { IconProps } from './icon.interface';
-import { IconLibrary } from './icon.types';
-import { IconRegistryService } from '../../services/icon/icon-registry.service';
-import { classNamesUtils } from '../../utils';
-import { ICON_TOKENS } from './icon.tokens';
-import { ICON_SELECTOR, DEFAULT_ICON_SIZE, DEFAULT_LIBRARY, DEFAULT_COLOR } from './icon.constants';
-import { ComponentSizeT, ColorT } from '../../types';
+// projects/ui/src/lib/atoms/icon/icon.component.ts
+import { ChangeDetectionStrategy, Component, computed, HostBinding, input } from '@angular/core';
+import { IconProps } from './models/icon.interface';
+import { ICON_TOKENS } from './models/icon.tokens';
+import { IconLibrary } from './models/icon.types';
+import { ColorT, ComponentSizeT } from '../../types';
+import { DEFAULT_COLOR, DEFAULT_ICON_SIZE, DEFAULT_LIBRARY } from './models/icon.constants';
 
 @Component({
-  selector: ICON_SELECTOR,
+  selector: 'ks-icon',
   standalone: true,
   templateUrl: './icon.html',
-  styleUrls: ['./icon.scss'],
+  styleUrl: './icon.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconComponent implements IconProps {
-  private readonly registry = inject(IconRegistryService);
-
-  // Inputs basados en Angular Signals que satisfacen la interfaz IconProps
+  /** Nombre del icono (requerido) */
   readonly name = input.required<string>();
+
+  /** Librería de icono a utilizar */
   readonly library = input<IconLibrary>(DEFAULT_LIBRARY);
+
+  /** Tamaño del icono según tokens semánticos o valor genérico */
   readonly size = input<ComponentSizeT>(DEFAULT_ICON_SIZE);
+
+  /** Token de color semántico */
   readonly color = input<ColorT>(DEFAULT_COLOR);
+
+  /** Relleno visual del icono */
   readonly filled = input<boolean>(false);
+
+  /** Grados de rotación manual (0, 90, 180, 270) */
   readonly rotate = input<number>(0);
+
+  /** Animación de giro continuo */
   readonly spin = input<boolean>(false);
+
+  /** Accesibilidad: Etiqueta descriptiva para lectores de pantalla */
   readonly ariaLabel = input<string>('');
 
-  // Computación reactiva de estilos e interacción
-  readonly iconSize = computed(() => ICON_TOKENS.size[this.size()]);
-
-  readonly rawSvg = computed(() => {
-    return this.registry.getIcon(this.library(), this.name()) || '';
+  /** Estilo CSS computado para rotación */
+  protected readonly transformStyle = computed(() => {
+    const deg = this.rotate();
+    return deg ? `rotate(${deg}deg)` : 'none';
   });
 
-  readonly computedClasses = computed(() =>
-    classNamesUtils('ks-icon-base', `ks-icon--${this.color()}`, this.spin() && 'ks-icon--spin'),
-  );
+  /** Binding dinámico a la propiedad CSS de tamaño */
+  @HostBinding('style.--ks-icon-size')
+  protected get hostSize(): string {
+    const sizeKey = this.size() as keyof typeof ICON_TOKENS.size;
+    return ICON_TOKENS.size[sizeKey] ?? this.size();
+  }
 
-  readonly computedStyles = computed(() => ({
-    transform: this.rotate() ? `rotate(${this.rotate()}deg)` : null,
-    width: this.iconSize(),
-    height: this.iconSize(),
-  }));
+  /** Binding dinámico al color token */
+  @HostBinding('style.--ks-icon-color')
+  protected get hostColor(): string {
+    const colorKey = this.color();
+    return `var(--ks-color-${colorKey}, currentColor)`;
+  }
 }

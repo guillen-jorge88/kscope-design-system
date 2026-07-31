@@ -1,10 +1,24 @@
+<!-- projects/ui/src/lib/atoms/icon/icon.html -->
 <span
-  [className]="computedClasses()"
-  [style.transform]="computedStyles().transform"
-  [style.width]="computedStyles().width"
-  [style.height]="computedStyles().height"
+  class="ks-icon__wrapper"
+  [class.ks-icon--spin]="spin()"
+  [style.transform]="transformStyle()"
+  [attr.aria-hidden]="!ariaLabel()"
   [attr.aria-label]="ariaLabel() || null"
-  [attr.aria-hidden]="ariaLabel() ? 'false' : 'true'"
-  [innerHTML]="rawSvg()"
+  [attr.role]="ariaLabel() ? 'img' : null"
 >
+  @switch (library()) {
+    @case ('material') {
+      <span class="material-icons" [class.ks-icon--filled]="filled()">
+        {{ name() }}
+      </span>
+    }
+    @case ('fontawesome') {
+      <i [class]="'fa-' + (filled() ? 'solid' : 'regular') + ' fa-' + name()"></i>
+    }
+    @default {
+      <!-- Custom SVG inline o CSS icon class -->
+      <i class="ks-icon__element" [class]="name()"></i>
+    }
+  }
 </span>
