@@ -12,6 +12,11 @@
       "root": "projects/ui",
       "sourceRoot": "projects/ui/src",
       "prefix": "ks",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",

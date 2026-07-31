@@ -1,0 +1,28 @@
+// projects/ui/src/lib/atoms/label/label.component.scss
+
+:host {
+  display: inline-block;
+  font-size: var(--ks-label-size, 14px);
+  font-weight: var(--ks-label-weight, 500);
+  color: var(--ks-label-color, currentColor);
+  text-align: var(--ks-label-align, left);
+  line-height: 1.4;
+
+  .ks-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    user-select: none;
+
+    &--disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .ks-label__asterisk {
+      color: var(--ks-color-danger, #dc2626);
+      font-weight: 700;
+    }
+  }
+}

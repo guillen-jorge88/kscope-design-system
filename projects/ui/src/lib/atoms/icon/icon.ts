@@ -4,16 +4,21 @@ import { IconProps } from './models/icon.interface';
 import { ICON_TOKENS } from './models/icon.tokens';
 import { IconLibrary } from './models/icon.types';
 import { ColorT, ComponentSizeT } from '../../types';
-import { DEFAULT_COLOR, DEFAULT_ICON_SIZE, DEFAULT_LIBRARY } from './models/icon.constants';
+import {
+  DEFAULT_COLOR,
+  DEFAULT_ICON_SIZE,
+  DEFAULT_LIBRARY,
+  ICON_SELECTOR,
+} from './models/icon.constants';
 
 @Component({
-  selector: 'ks-icon',
+  selector: ICON_SELECTOR,
   standalone: true,
   templateUrl: './icon.html',
   styleUrl: './icon.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IconComponent implements IconProps {
+export class Icon implements IconProps {
   /** Nombre del icono (requerido) */
   readonly name = input.required<string>();
 

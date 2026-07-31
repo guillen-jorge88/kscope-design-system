@@ -1,0 +1,15 @@
+<!-- projects/ui/src/lib/atoms/label/label.component.html -->
+<label
+  class="ks-label"
+  [attr.for]="forId() || null"
+  [class.ks-label--disabled]="disabled()"
+  [class.ks-label--required]="required()"
+>
+  <span class="ks-label__content">
+    <ng-content></ng-content>
+  </span>
+
+  @if (required()) {
+    <span class="ks-label__asterisk" aria-hidden="true">*</span>
+  }
+</label>
