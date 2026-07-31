@@ -1,0 +1,25 @@
+<!-- projects/ui/src/lib/atoms/button/button.component.html -->
+<button
+  [type]="type()"
+  [disabled]="disabled() || loading()"
+  class="ks-button"
+  [class.ks-button--loading]="loading()"
+  [class.ks-button--full-width]="fullWidth()"
+  [attr.aria-disabled]="disabled() || loading()"
+  [attr.aria-label]="ariaLabel() || null"
+>
+  <!-- Spinner de carga reutilizando el átomo Icon -->
+  @if (loading()) {
+    <ks-icon name="spinner" [size]="size()" [spin]="true" class="ks-button__spinner" />
+  } @else if (leftIcon()) {
+    <ks-icon [name]="leftIcon()" [size]="size()" class="ks-button__icon ks-button__icon--left" />
+  }
+
+  <span class="ks-button__label">
+    <ng-content></ng-content>
+  </span>
+
+  @if (!loading() && rightIcon()) {
+    <ks-icon [name]="rightIcon()" [size]="size()" class="ks-button__icon ks-button__icon--right" />
+  }
+</button>

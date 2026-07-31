@@ -1,0 +1,92 @@
+// projects/ui/src/lib/atoms/button/button.component.scss
+
+:host {
+  display: inline-block;
+
+  &.ks-button-host--full-width {
+    display: block;
+    width: 100%;
+  }
+}
+
+.ks-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ks-button-gap, 8px);
+  height: var(--ks-button-height, 40px);
+  padding: var(--ks-button-padding, 0 16px);
+  font-size: var(--ks-button-font-size, 14px);
+  font-weight: 600;
+  border-radius: var(--ks-button-radius, 6px);
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  width: 100%;
+
+  // Variantes
+  &--solid {
+    background-color: var(--ks-button-bg, var(--ks-color-primary, #1e40af));
+    color: var(--ks-button-text-color, #ffffff);
+
+    &:hover:not(:disabled) {
+      filter: brightness(0.9);
+    }
+    &:active:not(:disabled) {
+      filter: brightness(0.8);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border-color: var(--ks-button-border-color, var(--ks-color-primary, #1e40af));
+    color: var(--ks-button-text-color, var(--ks-color-primary, #1e40af));
+
+    &:hover:not(:disabled) {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+    &:active:not(:disabled) {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: var(--ks-button-text-color, var(--ks-color-primary, #1e40af));
+
+    &:hover:not(:disabled) {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &--link {
+    background-color: transparent;
+    color: var(--ks-button-text-color, var(--ks-color-primary, #1e40af));
+    padding: 0;
+    height: auto;
+
+    &:hover:not(:disabled) {
+      text-decoration: underline;
+    }
+  }
+
+  // Estados
+  &:disabled,
+  &--loading {
+    cursor: not-allowed;
+    opacity: 0.65;
+    pointer-events: none;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
+  }
+
+  .ks-button__label {
+    display: inline-flex;
+    align-items: center;
+  }
+}
