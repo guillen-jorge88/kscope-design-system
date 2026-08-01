@@ -1,0 +1,38 @@
+<!-- projects/ui/src/lib/atoms/textarea/textarea.component.html -->
+<div
+  class="ks-textarea-wrapper"
+  [class.ks-textarea-wrapper--disabled]="disabled()"
+  [class.ks-textarea-wrapper--readonly]="readonly()"
+  [class.ks-textarea-wrapper--focused]="isFocused()"
+  [class.ks-textarea-wrapper--status-error]="status() === 'error'"
+  [class.ks-textarea-wrapper--status-success]="status() === 'success'"
+  [class.ks-textarea-wrapper--status-warning]="status() === 'warning'"
+  [class.ks-textarea-wrapper--variant-filled]="variant() === 'filled'"
+  [class.ks-textarea-wrapper--variant-borderless]="variant() === 'borderless'"
+>
+  <textarea
+    [id]="id()"
+    [name]="name()"
+    [value]="value()"
+    [rows]="rows()"
+    [attr.maxlength]="maxlength() || null"
+    [placeholder]="placeholder()"
+    [disabled]="disabled()"
+    [readOnly]="readonly()"
+    [required]="required()"
+    class="ks-textarea__element"
+    (input)="onInput($event)"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+  ></textarea>
+
+  <!-- Contador de caracteres dinámico -->
+  @if (showCharacterCount()) {
+    <div class="ks-textarea__counter" [class.ks-textarea__counter--limit]="isAtLimit()">
+      {{ characterCount() }}
+      @if (maxlength()) {
+        / {{ maxlength() }}
+      }
+    </div>
+  }
+</div>
