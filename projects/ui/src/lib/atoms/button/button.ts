@@ -21,7 +21,7 @@ import { IconComponent } from '../icon/icon';
   styleUrl: './button.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Button implements ButtonProps {
+export class ButtonComponent implements ButtonProps {
   /** Estilo visual principal */
   readonly variant = input<ButtonVariant>(DEFAULT_BUTTON_VARIANT);
 

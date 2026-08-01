@@ -1,0 +1,66 @@
+<!-- projects/ui/src/lib/atoms/input/input.component.html -->
+<div
+  class="ks-input-wrapper"
+  [class.ks-input-wrapper--disabled]="disabled()"
+  [class.ks-input-wrapper--readonly]="readonly()"
+  [class.ks-input-wrapper--focused]="isFocused()"
+  [class.ks-input-wrapper--status-error]="status() === 'error'"
+  [class.ks-input-wrapper--status-success]="status() === 'success'"
+  [class.ks-input-wrapper--status-warning]="status() === 'warning'"
+  [class.ks-input-wrapper--variant-filled]="variant() === 'filled'"
+  [class.ks-input-wrapper--variant-borderless]="variant() === 'borderless'"
+>
+  <!-- Prefijo de Icono o Texto -->
+  @if (leftIcon()) {
+    <ks-icon [name]="leftIcon()" [size]="size()" class="ks-input__icon ks-input__icon--left" />
+  } @else if (prefixText()) {
+    <span class="ks-input__affix ks-input__affix--prefix">{{ prefixText() }}</span>
+  }
+
+  <!-- Elemento Input HTML Nativo -->
+  <input
+    [id]="id()"
+    [name]="name()"
+    [type]="computedType()"
+    [value]="value()"
+    [placeholder]="placeholder()"
+    [disabled]="disabled()"
+    [readOnly]="readonly()"
+    [required]="required()"
+    class="ks-input__element"
+    (input)="onInput($event)"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+  />
+
+  <!-- Botón de Limpieza (Reutilizando ks-button en variante ghost) -->
+  @if (clearable() && value() && !disabled() && !readonly()) {
+    <ks-button
+      variant="ghost"
+      [size]="size()"
+      leftIcon="ph-x-circle"
+      ariaLabel="Limpiar campo"
+      class="ks-input__action-btn"
+      (click)="clearValue()"
+    />
+  }
+
+  <!-- Toggle para tipo Password (Reutilizando ks-button en variante ghost) -->
+  @if (type() === 'password' && !disabled()) {
+    <ks-button
+      variant="ghost"
+      [size]="size()"
+      [leftIcon]="showPassword() ? 'ph-eye-slash' : 'ph-eye'"
+      [ariaLabel]="showPassword() ? 'Ocultar contraseña' : 'Mostrar contraseña'"
+      class="ks-input__action-btn"
+      (click)="togglePasswordVisibility()"
+    />
+  }
+
+  <!-- Sufijo de Icono o Texto -->
+  @if (rightIcon() && type() !== 'password') {
+    <ks-icon [name]="rightIcon()" [size]="size()" class="ks-input__icon ks-input__icon--right" />
+  } @else if (suffixText()) {
+    <span class="ks-input__affix ks-input__affix--suffix">{{ suffixText() }}</span>
+  }
+</div>
