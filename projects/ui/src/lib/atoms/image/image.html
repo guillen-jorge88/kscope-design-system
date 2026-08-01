@@ -1,0 +1,30 @@
+<!-- projects/ui/src/lib/atoms/image/image.component.html -->
+<div class="ks-image" [class.ks-image--loading]="isLoading()" [class.ks-image--error]="hasError()">
+  <!-- Skeleton / Loader mientras carga la imagen -->
+  @if (isLoading()) {
+    <div class="ks-image__skeleton" aria-hidden="true">
+      <ks-icon name="spinner" size="md" [spin]="true" />
+    </div>
+  }
+
+  <!-- Contenido de Fallback si ocurre un error -->
+  @if (hasError()) {
+    <div class="ks-image__fallback" role="img" [attr.aria-label]="alt()">
+      @if (currentSrc()) {
+        <img [src]="currentSrc()" [alt]="alt()" class="ks-image__element" />
+      } @else {
+        <ks-icon [name]="fallbackIcon()" size="lg" color="neutral" />
+      }
+    </div>
+  } @else {
+    <!-- Imagen nativa principal -->
+    <img
+      [src]="currentSrc()"
+      [alt]="alt()"
+      [attr.loading]="loading()"
+      class="ks-image__element"
+      (load)="onLoad($event)"
+      (error)="onError($event)"
+    />
+  }
+</div>
